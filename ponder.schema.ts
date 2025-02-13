@@ -3,13 +3,14 @@ import { onchainTable, relations, onchainEnum, index } from "ponder";
 export const deliveryStatus = onchainEnum("delivery_status", ["pending", "in_progress", "completed"]);
 export const transactionPurpose = onchainEnum("transaction_purpose", ["created", "updated", "deleted"]);
 
+//change tables to queries (see documentation)
 // Deliveries Table
 export const delivery = onchainTable("deliveries", (t) => ({
   id: t.text().primaryKey(), // Delivery ID
   description: t.text().notNull(),
   deliveryStatus: deliveryStatus().notNull(),
   customer: t.text().notNull(),
-}), 
+}),
 (table) => ({
   index: index().on(table.id),
 })

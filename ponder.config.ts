@@ -4,16 +4,16 @@ import { contractAbi } from "./abis/contractAbi";
 
 export default createConfig({
   networks: {
-    holesky: {
-      chainId: 17000,
+    sepolia: {
+      chainId: 11155111,
       transport: http(process.env.PONDER_RPC_URL_1 || ""),
     },
   },
   contracts: {
     DeliveryTracker: {
-      network: "holesky",
+      network: "sepolia",
       abi: contractAbi,
-      address: "0x044d30874894c8ce2BC1D04A38bDaeF1eC1bFf71",
+      address: "0x441A32f04FC43E1AEf137DcBE3AFEd92D45A5E7b",
     },
   },
 });
